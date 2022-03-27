@@ -5,7 +5,7 @@ import datetime
 from RandFunct import random_number
 from RandFunct2 import random_number2
 
-stuttertrax = []
+deelaytrax = []
 
 trnam = []
 
@@ -14,14 +14,14 @@ for subdir, dirs, files in os.walk('C:\\Users\\mysti\\Coding\\PyDeelay'):
         filepath = subdir + os.sep + file
 
         if filepath.endswith(".wav"):
-            stuttertrax.append(filepath)
+            deelaytrax.append(filepath)
             trnam.append(str(file[:-4]))
 
-trlen = len(stuttertrax)
+trlen = len(deelaytrax)
 
 for y in range(trlen):
 
-    atrack = stuttertrax[y]
+    atrack = deelaytrax[y]
 
     right_now = datetime.datetime.now().isoformat()
     list = []
