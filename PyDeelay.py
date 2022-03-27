@@ -9,7 +9,7 @@ stuttertrax = []
 
 trnam = []
 
-for subdir, dirs, files in os.walk('C:\\Users\\mysti\\Coding\\PyStutter'):
+for subdir, dirs, files in os.walk('C:\\Users\\mysti\\Coding\\PyDeelay'):
     for file in files:
         filepath = subdir + os.sep + file
 
@@ -69,7 +69,7 @@ for y in range(trlen):
         altAudio = altAudiodelt - defad2
 
      
-    oufil = "C:\\Users\\mysti\\Coding\\PyStutter\\Delayout_" + trnam[y] + "_" + str(tim) + ".wav"    
+    oufil = "C:\\Users\\mysti\\Coding\\PyDeelay\\Delayout_" + trnam[y] + "_" + str(tim) + ".wav"    
     altAudio.export(oufil, format="wav")
 
 
