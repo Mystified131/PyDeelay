@@ -42,35 +42,41 @@ for y in range(trlen):
 
     audlen = len(newAudio)
 
-    delln = random_number2(100, 800)
+    delln = random_number2(700, 1400)
 
     delAudio = AudioSegment.silent(duration = delln)
 
-    delitr = random_number2(4, 6)
+    delAudio2 = AudioSegment.silent(duration = delln)
 
-    defad = 1 / delitr * 18
+    delitr = random_number2(2, 4)
 
-    defad2 = .4 * defad
+    #defad = 1 / delitr
+
+    defad2 = int(18 / delitr)
 
     altAudio = newAudio - defad2
 
-    altAudiodelt = newAudio[0:0]
+    altAudionew = delAudio2 + altAudio
 
-    for ctr in range(delitr):
+    #altAudiodelt = newAudio[0:0]
 
-        altAudionew = delAudio + altAudio
+    for ctr in range(6):
 
-        altAudionew = altAudionew - defad
+        delAudio2 += delAudio
 
-        altAudio = altAudio + delAudio
+        altAudio = newAudio - defad2
 
-        altAudiodelt = altAudionew.overlay(altAudio)
+        altAudionew = delAudio2 + altAudio
 
-        altAudio = altAudiodelt - defad2
+        newAudio = altAudionew.overlay(newAudio)
+
+        #altAudiodelt = altAudiodelt.overlay(altAudionew)
+
+        #altAudio = altAudiodelt - defad2
 
      
     oufil = "C:\\Users\\mysti\\Coding\\PyDeelay\\Delayout_" + trnam[y] + "_" + str(tim) + ".wav"    
-    altAudio.export(oufil, format="wav")
+    newAudio.export(oufil, format="wav")
 
 
 print("")
